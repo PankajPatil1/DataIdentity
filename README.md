@@ -8,7 +8,7 @@ As this offline channel shares major contribution to total company sales, compan
 
 You are given a dataset of trainee performance for the training curriculum test wise within multiple programs. Your task is to predict the performance on such tests given the demographic information and training program/test details. This will enable your client to strengthen its training problem by figuring out **the most important factors that lead to a better engagement and performance for a trainee.**
 
-# Data Dictionary
+## Data Dictionary 
 
  
 |id 	  |	Unique ID |
@@ -29,4 +29,6 @@ You are given a dataset of trainee performance for the training curriculum test 
 | trainee_engagement_rating | 	Instructer/teaching assistant provided trainee engagement rating for the course |
 | is_pass |	 0 - test failed, 1 -  test passed |
  
- # 
+## Evaluation Metric ##
+
+The evaluation metric for this competition is AUC ROC score.
