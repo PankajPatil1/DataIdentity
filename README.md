@@ -33,6 +33,20 @@ You are given a dataset of trainee performance for the training curriculum test 
 
 The evaluation metric for this competition is AUC ROC score.
 
+## Approach
+The dataset had missing values in the age and trainee_engagement_rating, these were fixed by using the MICE package from the R repository. Once, the missing values were treated, I noticed there was a data leak in the dataset. The 'id' section had the entry in the form of 'traineeid_examid'. So, to exploit that, I calculated the percentage of exams passed by a particular trainee. So, for the following data:
+
+| id | trainee_id | is_pass |
+|:-------:|:---------:|:-------:|
+|  1_2  |  1  |  1  |
+|  1_4  |  1  |  1  |
+|  1_5  |  1  |  0  |
+
+The pass percentage for trainee 1 is 33.33%.
+
+These passing percentages were calculated for every trainee id and then were  put against (using weighted addition) the trainee_id in the test set in case the trainee id existed in the test set, otherwise predictive models were created to predict the passing probability.
+The dataset was trained using ANN, XGB and Logistic regression models. Once, the models were trained and verified that they were working using a 5 fold cross validation model. Their predictions were added using weights which were calculated completely using hit and trial method. Once the weights were finalised, we had two columns for predictions. One column consisted of the passing percentages and the other consisted of weighted addition of probabilities predicted using ensemble of models created earlier. Then another weighted addition was carried out (in case the pass percentage was not available for any trainee id, the predictions were added as it is to the final column). After hit and trial method, the model was finalized and published.
+
 ## Results
 | Score |  My Rank | Total # of people | 
 |:-----:|:-----:|:-------------:|
