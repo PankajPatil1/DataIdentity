@@ -116,5 +116,5 @@ merged$is_pass.x <- NULL
 merged$is_pass.y <- NULL
 
 
-write.csv(merged,"extra.csv",row.names=FALSE)
+write.csv(merged,"submission.csv",row.names=FALSE)
   
