@@ -33,7 +33,7 @@ You are given a dataset of trainee performance for the training curriculum test 
 
 The evaluation metric for this competition is AUC ROC score.
 
-## RESULTS
+## Results
 | Score |  My Rank | Total # of people | 
 |:-----:|:-----:|:-------------:|
 |0.7975061359 | 62 | 1142 |
